@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Silk from '@/app/ui/Silk.js'
+import Silk from '@/app/ui/Silk.js';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "ClareCreated" }],
   openGraph: {
-    title: "ClareCreated | Cooking Inspiration & Social Media Recipes",
+    title: "ClareCreated",
     description: "Discover delicious recipes, cooking tips, and behind-the-scenes fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspiration!",
     url: "https://clarecreated.com/",
     siteName: "ClareCreated",
@@ -73,7 +73,7 @@ export default function RootLayout({
           <Silk
             speed={3.5}
             scale={0.75}
-            color="#6d0e8dff"
+            color="#fb6de4ff"
             noiseIntensity={0.5}
             rotation={1.71}
           />
