@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// Home page component
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen gap-10 p-1">
