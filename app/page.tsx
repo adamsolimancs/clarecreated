@@ -1,7 +1,8 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
-import SplitText from './ui/SplitText.js';
+// file path changed
+import SplitText from '@/app/ui/SplitText.js';
 
 // Home page component
 export default function Home() {
