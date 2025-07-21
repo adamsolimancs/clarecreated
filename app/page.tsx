@@ -11,10 +11,10 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen gap-10 p-1">
+    <main className="flex flex-col items-center justify-center min-h-screen gap-10">
       <SplitText
         text="welcome to clarecreated!"
-        className={"text-5xl font-bold text-center"}
+        className={"text-5xl font-bold text-center pb-28"}
         delay={10}
         duration={2}
         ease="elastic.out(1, 0.3)"

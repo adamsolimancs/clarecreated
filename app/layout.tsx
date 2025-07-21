@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "ClareCreated",
-  description: "Discover delicious recipes, cooking tips, and behind-the-scenes fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspiration!",
+  description: "Discover delicious recipes, cooking tips, and lifestyle fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
   keywords: [
     "ClareCreated",
     "cooking",
@@ -31,30 +31,36 @@ export const metadata: Metadata = {
   authors: [{ name: "ClareCreated" }],
   openGraph: {
     title: "ClareCreated",
-    description: "Discover delicious recipes, cooking tips, and behind-the-scenes fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspiration!",
+    description: "Discover delicious recipes, cooking tips, and lifestyle fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
     url: "https://clarecreated.com/",
-    siteName: "ClareCreated",
+    siteName: "clarecreated",
     images: [
       {
-        url: "/instagram.png",
-        width: 120,
-        height: 120,
-        alt: "ClareCreated Instagram Logo"
+        url: "/logo.png",
+        width: 220,
+        height: 220,
+        alt: "ClareCreated Logo"
       },
-      {
-        url: "/tiktok.webp",
-        width: 120,
-        height: 120,
-        alt: "ClareCreated TikTok Logo"
-      }
+      // {
+      //   url: "/instagram.png",
+      //   width: 120,
+      //   height: 120,
+      //   alt: "ClareCreated Instagram Logo"
+      // },
+      // {
+      //   url: "/tiktok.webp",
+      //   width: 120,
+      //   height: 120,
+      //   alt: "ClareCreated TikTok Logo"
+      // }
     ],
     locale: "en_US",
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClareCreated | Cooking Inspiration & Social Media Recipes",
-    description: "Discover delicious recipes, cooking tips, and behind-the-scenes fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspiration!",
+    title: "clarecreated",
+    description: "Discover delicious recipes, cooking tips, and lifestyle fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
     images: [
       "/instagram.png"
     ]
@@ -73,8 +79,8 @@ export default function RootLayout({
           <Silk
             speed={3.5}
             scale={0.75}
-            color="#fb6de4ff"
-            noiseIntensity={0.5}
+            color="#f86ce1ff"
+            noiseIntensity={0}
             rotation={1.71}
           />
         </div>
