@@ -16,7 +16,7 @@ export default function OverviewLayout({
 
     return (
         <div>
-            <div style={{ paddingTop: '30px', paddingRight: '100px' }}>
+            <div style={{ paddingTop: '30px'}}>
                 <GooeyNav
                     items={items}
                     particleCount={9}
