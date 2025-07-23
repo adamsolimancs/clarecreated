@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: "Discover delicious recipes, cooking tips, and lifestyle fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
   keywords: [
     "ClareCreated",
+    "clarecreated",
+    "claredodo",
     "cooking",
     "recipes",
     "food",
@@ -30,8 +32,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "ClareCreated" }],
   openGraph: {
-    title: "ClareCreated",
-    description: "Discover delicious recipes, cooking tips, and lifestyle fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
+    title: "clarecreated",
+    description: "Delicious recipes, cooking tips, and lifestyle content from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
     url: "https://clarecreated.com/",
     siteName: "clarecreated",
     images: [
@@ -41,18 +43,6 @@ export const metadata: Metadata = {
         height: 220,
         alt: "ClareCreated Logo"
       },
-      // {
-      //   url: "/instagram.png",
-      //   width: 120,
-      //   height: 120,
-      //   alt: "ClareCreated Instagram Logo"
-      // },
-      // {
-      //   url: "/tiktok.webp",
-      //   width: 120,
-      //   height: 120,
-      //   alt: "ClareCreated TikTok Logo"
-      // }
     ],
     locale: "en_US",
     type: "website"
@@ -60,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "clarecreated",
-    description: "Discover delicious recipes, cooking tips, and lifestyle fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
+    description: "Delicious recipes, cooking tips, and lifestyle content from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
     images: [
       "/instagram.png"
     ]
@@ -72,6 +62,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
