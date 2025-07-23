@@ -1,4 +1,21 @@
 'use client';
+/*
+USAGE:
+import Silk from '@/app/ui/Silk.js';
+
+<div style={{ position: "fixed", inset: 0, zIndex: -1 }}>
+          <Silk
+            speed={3.5}
+            scale={0.75}
+            color="#ff79ef"
+            backgroundColor="#ff4af9"
+            noiseIntensity={0.5}
+            rotation={1.71}
+          />
+        </div>
+
+*/
+
 /* eslint-disable react/no-unknown-property */
 // error fixed.
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
@@ -35,6 +52,7 @@ uniform float uSpeed;
 uniform float uScale;
 uniform float uRotation;
 uniform float uNoiseIntensity;
+uniform vec3 uBackgroundColor;
 
 const float e = 2.71828182845904523536;
 
@@ -65,9 +83,11 @@ void main() {
                                    0.02 * tOffset) +
                            sin(20.0 * (tex.x + tex.y - 0.1 * tOffset)));
 
-  vec4 col = vec4(uColor, 1.0) * vec4(pattern) - rnd / 15.0 * uNoiseIntensity;
-  col.a = 1.0;
-  gl_FragColor = col;
+  vec3 waveColor = uColor * pattern - rnd / 15.0 * uNoiseIntensity;
+  // Blend between background and wave color
+  vec3 finalColor = mix(uBackgroundColor, waveColor, pattern);
+
+  gl_FragColor = vec4(finalColor, 1.0);
 }
 `;
 
@@ -101,6 +121,7 @@ const Silk = ({
   speed = 5,
   scale = 1,
   color = "#817480ff",
+  backgroundColor = "#ffffff", // new prop
   noiseIntensity = 1.5,
   rotation = 0,
 }) => {
@@ -112,10 +133,11 @@ const Silk = ({
       uScale: { value: scale },
       uNoiseIntensity: { value: noiseIntensity },
       uColor: { value: new Color(...hexToNormalizedRGB(color)) },
+      uBackgroundColor: { value: new Color(...hexToNormalizedRGB(backgroundColor)) }, // new
       uRotation: { value: rotation },
       uTime: { value: 0 },
     }),
-    [speed, scale, noiseIntensity, color, rotation]
+    [speed, scale, noiseIntensity, color, backgroundColor, rotation]
   );
 
   return (

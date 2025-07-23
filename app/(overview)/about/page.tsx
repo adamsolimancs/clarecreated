@@ -11,11 +11,10 @@ export default function About() {
                     alt="Clare profile picture"
                     width={220}
                     height={220}
-                    className="rounded-full shadow-lg mb-4 sm:mb-0 object-cover border-4 border-white w-40 h-40 sm:w-72 sm:h-72 md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]"
-                    priority
+                    className="rounded-full shadow-lg mb-4 sm:mb-0 object-cover border-4 border-white w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] xl:w-[450px] xl:h-[450px]" priority
                 />
                 <p
-                    className="text-base sm:text-lg text-center text-700 max-w-xs sm:max-w-md"
+                    className="text-lg sm:text-xl text-center text-700 max-w-xs sm:max-w-md"
                     style={{
                         textShadow: "0 2px 8px rgba(0,0,0,0.25), 0 1px 1px rgba(0,0,0,0.15)"
                     }}

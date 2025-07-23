@@ -1,13 +1,14 @@
 :root {
   --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
-  --color-1: #ff00d9;
-  --color-2: #e993ff;
-  --color-3: #c470ff;
-  --color-4: #9385ff;
+  --color-1: #ffffff;
+  --color-2: #b3ffb9;
+  --color-3: #70ecff;
+  --color-4: #90faa7;
 }
 
 .gooey-nav-container {
   position: relative;
+  padding-top: 30px;
 }
 
 .gooey-nav-container nav {
@@ -143,8 +144,8 @@
   z-index: 2;
   display: block;
   opacity: 0;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 100%;
   transform-origin: center;
 }
@@ -154,14 +155,14 @@
   position: absolute;
   top: calc(50% - 8px);
   left: calc(50% - 8px);
-  animation: particle calc(var(--time)) ease 1 -350ms, particle-fade 1.2s cubic-bezier(0.4,0,0.2,1) infinite alternate;
+  animation: particle calc(var(--time)) ease 1 -350ms, particle-flicker 1.5s infinite alternate;
 }
 
 .point {
-  background: var(--color);
+  background: radial-gradient(circle at 60% 40%, var(--color, #ff00d9) 60%, #fff 100%);
   opacity: 1;
-  animation: point calc(var(--time)) ease 1 -350ms, point-scale 1.2s cubic-bezier(0.4,0,0.2,1) infinite alternate;
-  box-shadow: 0 0 8px 2px #ff00d955, 0 0 2px 0 #c470ff99;
+  animation: point calc(var(--time)) ease 1 -350ms, point-scale 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  box-shadow: 0 0 16px 6px var(--color, #ff00d9cc);
 }
 
 @keyframes particle {
@@ -221,11 +222,33 @@
 }
 
 @keyframes point-scale {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.25); }
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.25);
+  }
 }
 
 @keyframes particle-fade {
-  0% { opacity: 0.7; }
-  100% { opacity: 0.2; }
+  0% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes particle-flicker {
+
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }

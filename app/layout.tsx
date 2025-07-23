@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Silk from '@/app/ui/Silk.js';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,15 +65,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div style={{ position: "fixed", inset: 0, zIndex: -1 }}>
-          <Silk
-            speed={3.5}
-            scale={0.75}
-            color="#f86ce1ff"
-            noiseIntensity={0}
-            rotation={1.71}
-          />
-        </div>
         <div style={{ position: "relative", zIndex: 1 }}>
           {children}
         </div>

@@ -16,17 +16,15 @@ export default function OverviewLayout({
 
     return (
         <div>
-            <div style={{ paddingTop: '30px'}}>
-                <GooeyNav
-                    items={items}
-                    particleCount={9}
-                    particleDistances={[70, 15]}
-                    particleR={100}
-                    animationTime={600}
-                    timeVariance={300}
-                    colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-                />
-            </div>
+            <GooeyNav
+                items={items}
+                particleCount={8}
+                particleDistances={[70, 15]}
+                particleR={100}
+                animationTime={600}
+                timeVariance={300}
+                colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+            />
             {children}
         </div>
     );
