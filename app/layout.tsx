@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ClareCreated",
-  description: "Discover delicious recipes, cooking tips, and lifestyle fun from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
+  title: "clarecreated",
+  description: "Delicious recipes, cooking tips, and lifestyle fun from @clarecreated. Follow on Instagram and TikTok for daily food inspo!",
   keywords: [
     "ClareCreated",
     "clarecreated",
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     "food creator",
     "home cooking"
   ],
-  authors: [{ name: "ClareCreated" }],
+  authors: [{ name: "clarecreated" }],
   openGraph: {
     title: "clarecreated",
-    description: "Delicious recipes, cooking tips, and lifestyle content from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
+    description: "Delicious recipes, cooking tips, and lifestyle fun from @clarecreated. Follow on Instagram and TikTok for daily food inspo!",
     url: "https://clarecreated.com/",
     siteName: "clarecreated",
     images: [
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "clarecreated",
-    description: "Delicious recipes, cooking tips, and lifestyle content from ClareCreated. Follow Clare on Instagram and TikTok for daily food inspo!",
+    description: "Delicious recipes, cooking tips, and lifestyle fun from @clarecreated. Follow on Instagram and TikTok for daily food inspo!",
     images: [
-      "/instagram.png"
+      "/logo.png"
     ]
   }
 };
