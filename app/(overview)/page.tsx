@@ -1,7 +1,6 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
-// file path changed
 import SplitText from '@/app/ui/SplitText.js';
 
 // Home page component
