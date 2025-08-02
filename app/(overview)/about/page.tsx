@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function About() {
+export default function AboutPage() {
     return (
         <main className="flex flex-col items-center justify-start min-h-screen pt-6 px-4 gap-6 sm:gap-10 mt-0">
             <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-center drop-shadow-lg">about me</h1>
@@ -19,10 +19,10 @@ export default function About() {
                         textShadow: "0 2px 8px rgba(0,0,0,0.25), 0 1px 1px rgba(0,0,0,0.15)"
                     }}
                 >
-                    hi! i’m clare, a passionate home cook and content creator. i love sharing fun, approachable recipes, baking and cooking hacks, and a peek into my daily foodie adventures. <br></br><br></br> whether you’re a beginner or a seasoned chef, i hope to inspire you to try something new in the kitchen and enjoy the process. thanks for being here!
+                    hi! i’m clare, a college student with a passion for making fun recipes and content. i love sharing fun, approachable recipes, baking and cooking hacks, and a peek into my daily foodie adventures. whether you’re a beginner or a seasoned chef, i hope to inspire you to try something new in the kitchen and enjoy the process. thanks for being here! <br></br><br></br> when i'm not in the kitchen, you can usually find me at a cute coffee shop doing schoolwork, browsing the farmers market for inspo, or rewatching my favorite shows. i’m all about making cooking feel fun, cozy, and totally doable—even on a busy schedule. i believe food should be joyful, creative, and shared, and i’m so happy to have you along for the ride. ♡
                 </p>
             </div>
-            <div className="flex flex-row sm:flex-row gap-10 sm:gap-14 mt-4 w-full items-center justify-center">
+            <div className="flex flex-row sm:flex-row gap-14 sm:gap-22 mt-4 w-full items-center justify-center">
                 <Link
                     href="https://www.instagram.com/clarecreated/?hl=en"
                     target="_blank"

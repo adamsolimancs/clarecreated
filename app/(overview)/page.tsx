@@ -57,8 +57,8 @@ export default function Home() {
             <Image
               src="/tiktok.webp"
               alt="TikTok"
-              width={84}
-              height={84}
+              width={74}
+              height={74}
               className="rounded-full shadow-lg group-hover:scale-110 transition-transform duration-200 object-contain"
               priority
             />
