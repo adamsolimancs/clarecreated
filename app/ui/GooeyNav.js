@@ -1,10 +1,8 @@
 // Credit to reactbits.dev
 'use client';
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 import "./GooeyNav.css";
-import { usePathname } from "next/navigation";
-
 
 const GooeyNav = ({
   items,
