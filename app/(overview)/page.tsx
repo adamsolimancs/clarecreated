@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SplitText from '@/app/ui/SplitText.js';
+import MediaBanner from '@/app/ui/MediaBanner';
 
 // Home page component
 export default function Home() {
@@ -28,44 +29,9 @@ export default function Home() {
       <p className="text-lg sm:text-xl text-center max-w-xs sm:max-w-xl drop-shadow-lg">
         hi, i’m clare! i share fun & yummy recipes, baking/cooking hacks, and lifestyle content. follow me on social media for more!
       </p>
-      <div className="flex flex-row sm:flex-row gap-14 sm:gap-22 mt-6 w-full items-center justify-center">
-        <Link
-          href="https://www.instagram.com/clarecreated/?hl=en"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex flex-col items-center group"
-        >
-          <div className="w-16 h-16 sm:w-[120px] sm:h-[120px] flex items-center justify-center">
-            <Image
-              src="/instagram.png"
-              alt="Instagram"
-              width={94}
-              height={94}
-              className="rounded-full shadow-lg group-hover:scale-110 transition-transform duration-200 object-contain"
-              priority
-            />
-          </div>
-          <span className="mt-2 text-lg sm:text-xl font-medium">instagram</span>
-        </Link>
-        <Link
-          href="https://www.tiktok.com/@claredodo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex flex-col items-center group"
-        >
-          <div className="w-16 h-16 sm:w-[120px] sm:h-[120px] flex items-center justify-center">
-            <Image
-              src="/tiktok.webp"
-              alt="TikTok"
-              width={74}
-              height={74}
-              className="rounded-full shadow-lg group-hover:scale-110 transition-transform duration-200 object-contain"
-              priority
-            />
-          </div>
-          <span className="mt-2 text-lg sm:text-xl font-medium">tiktok</span>
-        </Link>
-      </div>
+     
+     <MediaBanner />
+
       <div className="mt-10 w-full flex justify-center">
         <div className="flex flex-col items-center bg-white/70 dark:bg-black/40 rounded-xl p-6 gap-4 shadow-lg max-w-xs sm:max-w-md w-full">
           <h3 className="text-lg sm:text-xl font-semibold mb-1 text-center">my promotions</h3>
@@ -85,6 +51,7 @@ export default function Home() {
           >
             nugo discount code
           </Link>
+          <h4 className="text-sm sm:text-base font-medium mt-4 mb-1 text-center">business inquiries: itsclarecreated@gmail.com</h4>
         </div>
       </div>
     </main>
