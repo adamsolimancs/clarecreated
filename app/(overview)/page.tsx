@@ -1,36 +1,16 @@
 'use client';
-import Image from "next/image";
 import Link from "next/link";
-import SplitText from '@/app/ui/SplitText.js';
 import MediaBanner from '@/app/ui/MediaBanner';
+import PromotionsSection from '@/app/ui/PromotionsSection';
+import Hero from '@/app/ui/Hero';
 
 // Home page component
 export default function Home() {
-  const handleAnimationComplete = () => {
-    console.log('Title animated!');
-  };
-
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen gap-5 pt-14">
-      <SplitText
-        text="welcome to clarecreated!"
-        className="text-3xl sm:text-6xl font-bold text-center pb-20 drop-shadow-lg"
-        delay={10}
-        duration={2}
-        ease="elastic.out(1, 0.3)"
-        splitType="chars"
-        from={{ opacity: 0, y: 30 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0.1}
-        rootMargin="-100px"
-        textAlign="center"
-        onLetterAnimationComplete={handleAnimationComplete}
-      />
-      <p className="text-lg sm:text-xl text-center max-w-xs sm:max-w-xl drop-shadow-lg">
-        hi, i’m clare! i share fun & yummy recipes, baking/cooking hacks, and lifestyle content. follow me on social media for more!
-      </p>
-     
-     <MediaBanner />
+    <div>
+      <Hero />
+      <MediaBanner />
+      <PromotionsSection />
 
       <div className="mt-10 w-full flex justify-center">
         <div className="flex flex-col items-center bg-white/70 dark:bg-black/40 rounded-xl p-6 gap-4 shadow-lg max-w-xs sm:max-w-md w-full">
@@ -54,6 +34,7 @@ export default function Home() {
           <h4 className="text-sm sm:text-base font-medium mt-4 mb-1 text-center">business inquiries: itsclarecreated@gmail.com</h4>
         </div>
       </div>
-    </main>
+      
+    </div>
   );
 }

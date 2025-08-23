@@ -4,7 +4,7 @@ import MediaBanner from '@/app/ui/MediaBanner';
 export default function AboutPage() {
     return (
         <main className="flex flex-col items-center justify-start min-h-screen pt-6 px-4 gap-6 sm:gap-10 mt-0">
-            <h1 className="text-4xl sm:text-4xl font-bold mb-2 text-center drop-shadow-lg">about me</h1>
+            <h1 className="lg:text-5xl sm:text-4xl font-bold mb-2 text-center drop-shadow-lg">about me</h1>
             <div className="flex flex-col sm:flex-row items-center bg-white/10 rounded-2xl p-16 sm:p-8 gap-8 sm:gap-20 md:gap-32 lg:gap-38 shadow-xl max-w-full sm:max-w-3xl md:max-w-4xl lg:max-w-5xl w-full">
                 <Image
                     src="/clare.jpeg"

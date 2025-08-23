@@ -61,11 +61,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div style={{ position: "relative", zIndex: 1 }}>
+        <div className="min-h-screen">
           {children}
         </div>
       </body>

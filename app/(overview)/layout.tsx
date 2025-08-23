@@ -1,31 +1,21 @@
 'use client';
 import "../globals.css";
-import GooeyNav from '@/app/ui/GooeyNav.js'
-import { usePathname } from "next/navigation";
+import Header from '@/app/ui/Header';
+import Footer from '@/app/ui/Footer';
 
 export default function OverviewLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const pathname = usePathname();
-    const items =
-        pathname === "/"
-            ? [{ label: "about", href: "/about" }]
-            : [{ label: "home", href: "/" }];
-
     return (
         <div>
-            <GooeyNav
-                items={items}
-                particleCount={8}
-                particleDistances={[70, 15]}
-                particleR={100}
-                animationTime={600}
-                timeVariance={300}
-                colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-            />
-            {children}
+            <Header />
+            <main>
+                {children}
+                {/* add #social, #contact compatability to layout (so it appears on other pages) */}
+            </main>
+            <Footer />
         </div>
     );
 }
