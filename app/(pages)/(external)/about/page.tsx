@@ -1,5 +1,4 @@
 import Image from "next/image";
-import MediaBanner from '@/app/ui/MediaBanner';
 
 export default function AboutPage() {
     return (
@@ -21,9 +20,6 @@ export default function AboutPage() {
                 >
                     hi! i&apos;m clare, a college student with a passion for making fun recipes and content. i love sharing fun, approachable recipes, baking and cooking hacks, and a peek into my daily foodie adventures. whether you&apos;re a beginner or a seasoned chef, i hope to inspire you to try something new in the kitchen and enjoy the process. thanks for being here! <br></br><br></br> when i'm not in the kitchen, you can usually find me at a cute coffee shop doing schoolwork, browsing the farmers market for inspo, or rewatching my favorite shows. i&apos;m all about making cooking feel fun, cozy, and totally doable—even on a busy schedule. i believe food should be joyful, creative, and shared, and i&apos;m so happy to have you along for the ride. ♡
                 </p>
-            </div>
-            <div className="mb-12">
-                <MediaBanner />
             </div>
         </main>
     );

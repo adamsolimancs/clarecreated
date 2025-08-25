@@ -3,6 +3,15 @@
 :root {
   --background: #8dca9b;
   --foreground: #ffffff;
+  --promotionSetionBackground: #7bb388;
+  --muted-foreground: #e6e6e6;
+  --accent-pink: #e5989b;
+  --accent-yellow: #ffe066;
+  --accent-foreground: #fff;
+  --primary: #588157;
+  --primary-dark: #3a5a40;
+  --primary-foreground: #fff;
+  --border: #c9d6c2;
 }
 
 body {

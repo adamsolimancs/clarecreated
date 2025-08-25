@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function MediaBanner() {
     return (
-        <section id="socials" className="lg:py-20 py-10">
+        <section id="socials" className="lg:py-15 py-5">
             <div className="flex flex-row sm:flex-row gap-14 sm:gap-22 w-full items-center justify-center">
                 <Link
                     href="https://www.instagram.com/clarecreated/?hl=en"

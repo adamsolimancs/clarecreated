@@ -13,7 +13,6 @@ export default function OverviewLayout({
             <Header />
             <main>
                 {children}
-                {/* add #social, #contact compatability to layout (so it appears on other pages) */}
             </main>
             <Footer />
         </div>
