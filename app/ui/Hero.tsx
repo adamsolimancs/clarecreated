@@ -9,7 +9,7 @@ const Hero = () => {
         <section className="flex flex-col items-center justify-start gap-5 pt-14 lg:pb-12 pb-2">
             <SplitText
                 text="welcome to clarecreated!"
-                className="text-3xl sm:text-6xl font-bold text-center pb-20 drop-shadow-sm"
+                className="text-3xl sm:text-6xl font-bold text-center pb-8 lg:pb-20 drop-shadow-sm"
                 delay={10}
                 duration={2}
                 ease="elastic.out(1, 0.3)"
