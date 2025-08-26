@@ -11,7 +11,7 @@ export default function OverviewLayout({
             <main>
                 {children}
             </main>
-            <MediaBanner />
+            <MediaBanner className="pt-12" />
         </div>
     );
 }

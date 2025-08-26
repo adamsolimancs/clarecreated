@@ -21,7 +21,7 @@ export default function HomePage() {
     <div>
       <Hero />
       <MediaBanner />
-      <div className="text-center pt-6 pb-10">
+      <div className="text-center pt-10 lg:pt-16">
         <button
           onClick={scrollToPromos}
           className="animate-float hover:text-primary transition-colors hover:cursor-pointer"

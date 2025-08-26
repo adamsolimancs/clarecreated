@@ -23,7 +23,7 @@ const Footer = () => {
             <p className="flex items-center justify-center mb-2">
               Made with <Heart className="h-4 w-4 mx-1 text-red-400" /> for food lovers everywhere
             </p>
-            <p>© 2025 ClareCreated. All rights reserved.</p>
+            <p>© 2025 ClareCreated</p>
           </div>
         </div>
       </div>
