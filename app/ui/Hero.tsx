@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/app/ui/components/button"
 import { Camera, PlayCircle, Sparkles, UtensilsCrossed } from "lucide-react"
-import SplitText from "@/app/ui/SplitText.js"
+import SplitText from "@/app/ui/SplitText"
 import { useCallback } from "react"
 import { smoothScrollToId } from "@/app/lib/scroll"
 
