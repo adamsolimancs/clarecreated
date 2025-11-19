@@ -2,11 +2,12 @@
 'use client';
 import { useRef, useEffect, useState, useMemo, type CSSProperties } from "react";
 import { gsap } from "gsap";
-import type { TweenVars } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText as GSAPSplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger, GSAPSplitText);
+
+type TweenVars = gsap.TweenVars
 
 interface SplitTextProps {
   text: string
@@ -109,7 +110,7 @@ const SplitText = ({
       return
     }
 
-    let targets: HTMLElement[] | undefined
+    let targets: Element[] | undefined
     switch (splitType) {
       case "lines":
         targets = splitter.lines
@@ -131,18 +132,20 @@ const SplitText = ({
     }
 
     targets.forEach((t) => {
-      t.style.willChange = "transform, opacity"
+      const element = t as HTMLElement
+      element.style.willChange = "transform, opacity"
     })
 
     if (normalizedLocks.length && splitter.words?.length) {
       splitter.words.forEach((wordEl) => {
-        const normalizedWord = wordEl.textContent
+        const element = wordEl as HTMLElement
+        const normalizedWord = element.textContent
           ?.replace(/[^\p{L}\p{N}]/gu, "")
           .toLowerCase()
 
         if (normalizedWord && normalizedLocks.includes(normalizedWord)) {
-          wordEl.style.whiteSpace = "nowrap"
-          wordEl.style.display = "inline-block"
+          element.style.whiteSpace = "nowrap"
+          element.style.display = "inline-block"
         }
       })
     }
