@@ -3,6 +3,7 @@ import MediaBanner from '@/app/ui/MediaBanner';
 import PromotionsSection from '@/app/ui/PromotionsSection';
 import Hero from '@/app/ui/Hero';
 import { ArrowDown } from 'lucide-react';
+import { smoothScrollToId } from '@/app/lib/scroll';
 
 export default function HomePage() {
   
@@ -10,11 +11,7 @@ export default function HomePage() {
    * Function to scroll to the promos section
    */
   const scrollToPromos = () => {
-    const element = document.getElementById('promos');
-    if (element) {
-      // Smoothly scroll to the element
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    smoothScrollToId('promos', { offset: 12 });
   };
 
   return (

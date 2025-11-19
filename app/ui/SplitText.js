@@ -1,6 +1,6 @@
 // Credit to ReactBits.dev
 'use client';
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText as GSAPSplitText } from "gsap/SplitText";
@@ -18,12 +18,54 @@ const SplitText = ({
   to = { opacity: 1, y: 0 },
   threshold = 0.1,
   rootMargin = "-100px",
-  textAlign = "center",
+  textAlign,
   onLetterAnimationComplete,
+  lockWords = [],
 }) => {
   const ref = useRef(null);
   const animationCompletedRef = useRef(false);
   const scrollTriggerRef = useRef(null);
+  const lastWidthRef = useRef(0);
+  const [reflowKey, setReflowKey] = useState(0);
+  const normalizedLocks = useMemo(
+    () =>
+      (Array.isArray(lockWords) ? lockWords : [])
+        .map((word) => word?.toString().trim().toLowerCase())
+        .filter(Boolean),
+    [lockWords]
+  );
+  const normalizedSplitType = useMemo(() => {
+    if (!normalizedLocks.length) return splitType;
+    const tokens = `${splitType}`
+      .split(",")
+      .map((token) => token.trim())
+      .filter(Boolean);
+    if (!tokens.includes("words")) tokens.push("words");
+    return tokens.join(", ");
+  }, [splitType, normalizedLocks.length]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !ref.current || typeof ResizeObserver === "undefined") {
+      return;
+    }
+
+    const node = ref.current;
+    const observer = new ResizeObserver((entries) => {
+      const entry = entries?.[0];
+      if (!entry) return;
+
+      const nextWidth = entry.contentRect.width;
+      if (Math.abs(nextWidth - lastWidthRef.current) > 2) {
+        lastWidthRef.current = nextWidth;
+        setReflowKey((prev) => prev + 1);
+      }
+    });
+
+    lastWidthRef.current = node.getBoundingClientRect().width;
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined" || !ref.current || !text) return;
@@ -38,7 +80,7 @@ const SplitText = ({
     let splitter;
     try {
       splitter = new GSAPSplitText(el, {
-        type: splitType,
+        type: normalizedSplitType,
         absolute: absoluteLines,
         linesClass: "split-line",
       });
@@ -71,6 +113,19 @@ const SplitText = ({
     targets.forEach((t) => {
       t.style.willChange = "transform, opacity";
     });
+
+    if (normalizedLocks.length && splitter.words?.length) {
+      splitter.words.forEach((wordEl) => {
+        const normalizedWord = wordEl.textContent
+          ?.replace(/[^\p{L}\p{N}]/gu, "")
+          .toLowerCase();
+
+        if (normalizedWord && normalizedLocks.includes(normalizedWord)) {
+          wordEl.style.whiteSpace = "nowrap";
+          wordEl.style.display = "inline-block";
+        }
+      });
+    }
 
     const startPct = (1 - threshold) * 100;
     const marginMatch = /^(-?\d+(?:\.\d+)?)(px|em|rem|%)?$/.exec(rootMargin);
@@ -126,12 +181,15 @@ const SplitText = ({
     delay,
     duration,
     ease,
+    normalizedSplitType,
     splitType,
     from,
     to,
     threshold,
     rootMargin,
     onLetterAnimationComplete,
+    normalizedLocks,
+    reflowKey,
   ]);
 
   return (
@@ -139,11 +197,11 @@ const SplitText = ({
       ref={ref}
       className={`split-parent ${className}`}
       style={{
-        textAlign,
         overflow: "hidden",
         display: "inline-block",
         whiteSpace: "normal",
         wordWrap: "break-word",
+        ...(textAlign ? { textAlign } : {}),
       }}
     >
       {text}

@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="font-serif text-3xl font-bold mb-6">
             clarecreated
           </div>
-          
+          Business Inquiries:
           <div className="flex items-center justify-center mb-8">
             <Mail className="h-5 w-5 mr-2" />
             <a 

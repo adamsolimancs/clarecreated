@@ -1,136 +1,200 @@
 
 .promotionSection {
-  padding: 5rem 1.5rem;
-  background: var(--promotionSetionBackground);
+  position: relative;
+  padding: 5.5rem 1.5rem 4.5rem;
   color: var(--foreground);
-
-  /* start hidden */
+  overflow: hidden;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(25px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.promotionSection::before {
+  content: "";
+  position: absolute;
+  inset: 2rem 0 0;
+  background: radial-gradient(circle at 10% 20%, rgba(202, 248, 227, 0.45), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(246, 168, 205, 0.35), transparent 50%);
+  filter: blur(45px);
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .promotionSectionVisible {
-  /* when active */
   opacity: 1;
   transform: translateY(0);
 }
 
 .promotionContainer {
-  max-width: 1000px;
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .promotionHeader {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.promotionEyebrow {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
 }
 
 .promotionTitle {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: var(--foreground);
-}
-
-@media (min-width: 768px) {
-  .promotionTitle {
-    font-size: 3rem;
-  }
+  font-size: clamp(2.5rem, 4vw, 3.4rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .promotionSubtitle {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  margin: 0 auto 1.25rem;
+  max-width: 34rem;
+}
+
+.promotionLead {
+  max-width: 46rem;
   margin: 0 auto;
+  color: rgba(15, 31, 26, 0.72);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .promotionGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 @media (min-width: 768px) {
   .promotionGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1040px) {
+  .promotionGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 .promotionCard {
-  background: var(--foreground);
-  color: var(--background);
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
   padding: 2rem;
+  border-radius: 1.75rem;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 35px 90px rgba(17, 34, 27, 0.15);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  transition: transform 0.2s, box-shadow 0.2s;
-  max-width: 500px;
-  margin: 0 auto;    /* center cards */
-  padding: 1.5rem;
+  gap: 1rem;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .promotionCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 45px 110px rgba(24, 39, 35, 0.2);
+}
+
+.promotionBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  background: rgba(255, 255, 255, 0.9);
+  color: rgba(15, 31, 26, 0.7);
+  border-radius: 999px;
+  padding: 0.45rem 1.2rem;
 }
 
 .promotionIcon {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  display: flex;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 1.25rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.4), 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .bgAccentPink {
-  background: var(--accent-pink);
+  background: linear-gradient(135deg, var(--accent-pink), var(--accent-lilac));
 }
 
 .bgAccentYellow {
-  background: var(--accent-yellow);
+  background: linear-gradient(135deg, var(--accent-yellow), #ffd19c);
+}
+
+.bgAccentMint {
+  background: linear-gradient(135deg, var(--accent-mint), #7edbd3);
 }
 
 .textAccentForeground {
   color: var(--accent-foreground);
 }
 
+.promotionCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .promotionCardTitle {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  color: var(--foreground);
 }
 
 .promotionCardDesc {
   font-size: 1rem;
-  color: #73a77f;
-  margin-bottom: 1.5rem;
+  color: rgba(15, 31, 26, 0.78);
   line-height: 1.6;
 }
 
-.promotionBtn {
-  background: var(--primary);
-  color: var(--primary-foreground);
-  border-radius: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: center;
-  display: inline-flex;
+.promotionMeta {
+  font-size: 0.9rem;
+  color: rgba(15, 31, 26, 0.65);
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: background 0.2s, box-shadow 0.2s;
+  gap: 0.35rem;
+}
+
+.promotionBtn {
+  margin-top: auto;
+  border-radius: 1rem;
+  background: linear-gradient(120deg, var(--primary), #3a9a7c);
+  color: var(--primary-foreground);
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .promotionBtn:hover {
-  background: var(--primary-dark);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 25px 50px rgba(47, 122, 98, 0.25);
+}
+
+.promotionBtnInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.externalIcon {
+  height: 1.25rem;
+  width: 1.25rem;
 }
 
 @keyframes fadeIn {

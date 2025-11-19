@@ -1,9 +1,9 @@
 .shiny-text {
-  color: #efefefa4;
+  color: #06031ca4;
   background: linear-gradient(120deg,
-      rgba(255, 255, 255, 0) 40%,
+      rgba(242, 223, 223, 0) 40%,
       rgba(255, 255, 255, 0.8) 50%,
-      rgba(255, 255, 255, 0) 60%);
+      rgba(206, 190, 190, 0) 60%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
