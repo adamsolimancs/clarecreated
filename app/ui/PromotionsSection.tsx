@@ -76,10 +76,6 @@ const PromotionsSection = () => {
             speed={2}
             className={styles.promotionSubtitle}
           />
-          <p className={styles.promotionLead}>
-            highly curated, obsessively tested, and casually chic kitchen faves. no clutter—just staples that elevate your
-            cooking, your space, and your snack drawer.
-          </p>
         </div>
 
         <div className={styles.promotionGrid}>

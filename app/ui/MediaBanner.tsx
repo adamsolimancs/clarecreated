@@ -3,9 +3,9 @@ import Image from "next/image"
 import { ArrowUpRight, Sparkles } from "lucide-react"
 import type { ComponentProps } from "react"
 
-interface MediaBannerProps extends ComponentProps<"section"> {}
+type MediaBannerProps = ComponentProps<"section">
 
-const MediaBanner: React.FC<MediaBannerProps> = ({ className = "", ...props }) => {
+const MediaBanner = ({ className = "", ...props }: MediaBannerProps) => {
   const socials = [
     {
       name: "Instagram",
@@ -31,7 +31,7 @@ const MediaBanner: React.FC<MediaBannerProps> = ({ className = "", ...props }) =
       name: "YouTube",
       href: "https://www.youtube.com/@clarecreated",
       img: "/Youtube_logo.png",
-      followers: "80+",
+      followers: "100+",
       vibe: "shorts recipes + vlogs",
       accentClass: "from-[#ffe7a0]/80 via-white/80 to-[#f6a8cd]/70",
       size: 76,
@@ -84,7 +84,6 @@ const MediaBanner: React.FC<MediaBannerProps> = ({ className = "", ...props }) =
                     width={social.size}
                     height={social.size}
                     className="object-contain"
-                    priority
                   />
                 </div>
                 <div className="space-y-1">
@@ -97,7 +96,7 @@ const MediaBanner: React.FC<MediaBannerProps> = ({ className = "", ...props }) =
                 <span>{social.vibe}</span>
               </div>
               <div className="mt-5 flex items-center text-sm font-semibold text-primary">
-                hop in <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                check it out <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>
             </Link>
           ))}

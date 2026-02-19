@@ -1,6 +1,8 @@
 import { Heart, Mail } from "lucide-react"
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer id="footer" className="bg-primary text-primary-foreground py-8 lg:py-12 mt-8">
       <div className="container mx-auto">
@@ -23,7 +25,7 @@ const Footer = () => {
             <p className="flex items-center justify-center mb-2">
               Made with <Heart className="h-4 w-4 mx-1 text-red-400" /> for food lovers everywhere
             </p>
-            <p>© 2025 ClareCreated</p>
+            <p>© {currentYear} ClareCreated</p>
           </div>
         </div>
       </div>

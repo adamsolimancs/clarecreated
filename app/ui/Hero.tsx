@@ -40,10 +40,6 @@ const floatingNotes = [
 const heroLockedWords = ["clarecreated"]
 
 const Hero = () => {
-  const handleHeroAnimationComplete = () => {
-    console.log("Hero animation completed")
-  }
-
   const handleScrollToPromos = useCallback(() => {
     smoothScrollToId("promos", { offset: 12 })
   }, [])
@@ -64,7 +60,6 @@ const Hero = () => {
             to={{ opacity: 1, y: 0 }}
             threshold={0.15}
             rootMargin="-80px"
-            onLetterAnimationComplete={handleHeroAnimationComplete}
             lockWords={heroLockedWords}
           />
 

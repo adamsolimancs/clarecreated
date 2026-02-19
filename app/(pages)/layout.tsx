@@ -1,5 +1,3 @@
-'use client';
-import "../globals.css";
 import Header from '@/app/ui/Header';
 import Footer from '@/app/ui/Footer';
 

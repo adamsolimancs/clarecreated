@@ -1,4 +1,3 @@
-'use client';
 import MediaBanner from '@/app/ui/MediaBanner';
 
 export default function OverviewLayout({

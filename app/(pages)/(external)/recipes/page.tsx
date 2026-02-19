@@ -1,7 +1,3 @@
-'use client';
-import React from "react";
-import styles from "./recipes.module.css"
-
 export default function RecipesPage() {
     return (
         <main className="flex flex-col items-center justify-start min-h-screen gap-5 pt-14">
