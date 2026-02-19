@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+const siteUrl = "https://clarecreated.com";
+const siteTitle = "clarecreated";
+const siteDescription =
+  "Delicious recipes, cooking tips, and lifestyle fun from @clarecreated. Follow on Instagram and TikTok for daily food inspo!";
+const ogImage = "/logo.png";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -13,9 +19,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://clarecreated.com"),
-  title: "clarecreated",
-  description: "Delicious recipes, cooking tips, and lifestyle fun from @clarecreated. Follow on Instagram and TikTok for daily food inspo!",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: "%s | clarecreated",
+  },
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   keywords: [
     "ClareCreated",
     "clarecreated",
@@ -32,13 +48,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "clarecreated" }],
   openGraph: {
-    title: "clarecreated",
-    description: "Delicious recipes, cooking tips, and lifestyle fun from @clarecreated. Follow on Instagram and TikTok for daily food inspo!",
-    url: "https://clarecreated.com/",
-    siteName: "clarecreated",
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: siteTitle,
     images: [
       {
-        url: "/logo.png",
+        url: ogImage,
         width: 220,
         height: 220,
         alt: "ClareCreated Logo"
@@ -49,12 +65,54 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "clarecreated",
-    description: "Delicious recipes, cooking tips, and lifestyle fun from @clarecreated. Follow on Instagram and TikTok for daily food inspo!",
+    title: siteTitle,
+    description: siteDescription,
     images: [
-      "/logo.png"
+      ogImage
     ]
   }
+};
+
+const jsonLdGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: siteTitle,
+      description: siteDescription,
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "ClareCreated",
+      url: siteUrl,
+      logo: `${siteUrl}${ogImage}`,
+      sameAs: [
+        "https://www.instagram.com/clarecreated/?hl=en",
+        "https://www.tiktok.com/@claredodo",
+        "https://www.youtube.com/@clarecreated"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/about#person`,
+      name: "Clare",
+      alternateName: "clarecreated",
+      url: `${siteUrl}/about`,
+      image: `${siteUrl}/clare.jpeg`,
+      sameAs: [
+        "https://www.instagram.com/clarecreated/?hl=en",
+        "https://www.tiktok.com/@claredodo",
+        "https://www.youtube.com/@clarecreated"
+      ],
+      worksFor: {
+        "@id": `${siteUrl}/#organization`,
+      }
+    }
+  ]
 };
 
 export default function RootLayout({
@@ -65,6 +123,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-foreground`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
+        />
         <div className="relative min-h-screen overflow-hidden">
           <div
             className="pointer-events-none absolute inset-0 select-none"
