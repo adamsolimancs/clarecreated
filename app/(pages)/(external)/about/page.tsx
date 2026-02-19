@@ -1,4 +1,36 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+    title: "About",
+    description:
+        "Meet Clare, the creator behind ClareCreated, sharing approachable recipes, kitchen hacks, and food-focused lifestyle content.",
+    alternates: {
+        canonical: "/about",
+    },
+    openGraph: {
+        title: "About Clare | clarecreated",
+        description:
+            "Learn more about Clare and her mission to make cooking feel fun, cozy, and doable for everyone.",
+        url: "/about",
+        type: "profile",
+        images: [
+            {
+                url: "/clare.jpeg",
+                width: 800,
+                height: 800,
+                alt: "Clare profile picture",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About Clare | clarecreated",
+        description:
+            "Learn more about Clare and her mission to make cooking feel fun, cozy, and doable for everyone.",
+        images: ["/clare.jpeg"],
+    },
+};
 
 export default function AboutPage() {
     return (
