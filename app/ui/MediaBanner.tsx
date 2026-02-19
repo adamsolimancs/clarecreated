@@ -55,13 +55,10 @@ const MediaBanner = ({ className = "", ...props }: MediaBannerProps) => {
             <h2 className="text-balance text-3xl font-semibold text-foreground sm:text-4xl">
               socials
             </h2>
-            <p className="text-base text-muted-foreground sm:text-lg">
-              grab inspo, see the behind-the-scenes, and join thousands of food friends who try the recipes in real time.
-            </p>
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
             <div className="rounded-full border border-white/50 bg-white/80 px-4 py-2 shadow-sm">
-              ✨ 3 platforms • new drops weekly
+              ✨
             </div>
           </div>
         </div>
